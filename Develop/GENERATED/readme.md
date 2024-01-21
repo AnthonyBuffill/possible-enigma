@@ -1,64 +1,10 @@
-const inquirer = require('inquirer');
-const fs = require('fs');
-const { default: ListPrompt } = require('inquirer/lib/prompts/list');
 
-inquirer
-  .prompt([
-    {
-      type: 'input',
-      message: 'What is the title of your project?',
-      name: 'title',
-    },
-    {
-      type: 'input',
-      message: 'Please decribe your project?',
-      name: 'description',
-    },
-    {
-      type: 'input',
-      message: 'What are the steps required to install your project?',
-      name: 'instructions',
-    },
-    {
-      type: 'input',
-      message: 'What is the usefulness of your project?',
-      name: 'usage',
-    },
-    {
-      type: 'input',
-      message: 'What is your github username?',
-      name: 'username',
-    },
-    {
-      type: 'input',
-      message: 'Please enter your email address',
-      name: 'email',
-    },
-    {
-      type: 'list',
-      name: 'license',
-      message: 'Choose a license:',
-      choices: [
-        'Apache_License',
-        'MIT',
-        'Boost_Software_License',
-        'Eclipse_Public_License',
-        'BSD_2CLAUSE_Licence',
-        'NONE',
-      ]
-      
-    },
-
-
-  ])
-  .then((response) =>{
-    fs.writeFileSync('./GENERATED/readme.md',`
- # ${response.title}
- ![](https://img.shields.io/badge/javascript-${response.license}-blue)
+ # Read ME Generator
+ ![](https://img.shields.io/badge/javascript-MIT-blue)
 
 ## Description
    
-  ${response.description}
+  create a professional read me
 
 
 ## Table of Contents 
@@ -71,18 +17,18 @@ inquirer
 
 ## Installation
 
-  ${response.instructions}
+  use the terminal command line with node and the inquirer package
 
 
 
 ## Usage
 
-  ${response.usage}
+  professional read mes are essential for all repositories
 
 
 ## License
 
-This project is licensed under the terms of the ${response.license} .
+This project is licensed under the terms of the MIT .
 
 ---
 
@@ -145,16 +91,14 @@ or harmful.
 
 ## Questions
 
-For more information click this link to my github profile : https://github.com/${response.username}  
-Or, email me at : ${response.email}
+For more information click this link to my github profile : https://github.com/anthonybuffill  
+Or, email me at : abuffill@outlook.com
 
 
-## SCREEN Recording
+## Tests
 https://drive.google.com/file/d/19pU_Pym_5mGc_KtcV3MX3njUI4C7u2LH/view
 
 
 
 Go the extra mile and write tests for your application. Then provide examples on how to run them here.
-    `)
-    console.log('Success!')
-  })
+    
