@@ -17,7 +17,9 @@
 
 ## Installation
 
-  are working in the command line with node
+  You will find the source code in the index.js file located in the develop folder. At that time take notice of the GENERATED folder also in the Develop folder.
+  Once you have traversed into the index file, open up your intergrated terminal assuming you are using vs code. type in "node index" and a series of prompts will begin one at a time for you to answer in the command line. Once complete you will see a message "success" and simultaneously a new file "readme.md will have generated in your GENERATED folder containing all the information provided by the user.
+  to see this in action you may wish to watch the video by clicking the linnk in the screen recording section of this document.
 
 
 
